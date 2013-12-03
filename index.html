@@ -14,6 +14,12 @@
     <link rel="stylesheet" type="text/css" href="css/dc.css">
 </head>
 <body>
+    <form>
+        <select id="pathwaySelector">
+            <option value="">Select One</option>
+        </select>
+    </form>
+
     <div class="container" id="main-container">
         <div class="row">
             <div class="span4">
@@ -34,6 +40,23 @@
         </div>
     </div>
     <script type="text/javascript">
+
+    var knownPathways = ['abc', 'turtle', 'scientist'];
+    var selector = $('#pathwaySelector');
+    for (var i = 0; i < knownPathways.length; i++) {
+        var newOption = $('<option>');
+        newOption.val(knownPathways[i]);
+        newOption.text(knownPathways[i]);
+        selector.append(newOption);
+    }
+
+    selector.on('change', function (event, ui) {
+        var filename = 'pathways/' + $(this).val() + '.json'
+        console.log(filename);
+        d3.json(filename, function (jsonData) {
+            // logic
+        });
+    });
 
     //load data
     d3.csv("data/dlbcl_flat.csv", function(csv) {

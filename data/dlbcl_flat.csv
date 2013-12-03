@@ -1,0 +1,10 @@
+target,subtype,regimen,survivalRate,cellOrigin
+BCL6,GCB,R-CHOP,45,Germinal centre B-cell
+EZH2,GCB,R-CHOP,45,Germinal centre B-cell
+PI3K/Akt,GCB,R-CHOP,45,Germinal centre B-cell
+BCR,ABC,R-CHOP,80,Post‐germinal centre B‐cell
+CBM complex,ABC,R-CHOP,80,Post‐germinal centre B‐cell
+IRAK-4,ABC,R-CHOP,80,Post‐germinal centre B‐cell
+JAK-STAT,ABC,R-CHOP,80,Post‐germinal centre B‐cell
+PD-1,PMBL,DA-EPOCH-R,97,Post‐thymic B‐cell
+JAK-STAT,PMBL,DA-EPOCH-R,97,Post‐thymic B‐cell

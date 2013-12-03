@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>What is known about DLBCL subtypes</title>
+
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/d3.js"></script>
+    <script type="text/javascript" src="js/crossfilter.js"></script>
+    <script type="text/javascript" src="js/dc.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dc.css">
+</head>
+<body>
+    <div class="container" id="main-container">
+        <div class="row">
+            <div class="span4">
+                <div id="subtypePie">
+                    <h4>Clinical Subtypes</h4>
+                </div>
+            </div>
+            <div class="span4">
+                <div id="regimenPie">
+                    <h4>Regimens</h4>
+                </div>
+            </div>
+            <div class="span4">
+                <div id="targetPie">
+                    <h4>Potential Targets</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    //load data
+    d3.csv("data/dlbcl_flat.csv", function(csv) {
+
+        console.log(csv);
+
+        //create charts
+        var subtypePie = dc.pieChart("#subtypePie");
+        var regimenPie = dc.pieChart("#regimenPie");
+        //var targetPie = dc.pieChart("#targetPie");
+
+        //run data through crossfilter
+        var data = crossfilter(csv);
+
+            //create dimensions for subtype piechart
+            var subtypeDimension = data.dimension(function(d) {return d.subtype});
+            var subtypeGroup = subtypeDimension.group();
+
+            //create dimensions for regimen piechart
+            var regimenDimension = data.dimension(function(d) {return d.regimen});
+            var regimenGroup = regimenDimension.group();
+
+        subtypePie.width(200)
+            .height(200)
+            .transitionDuration(1500)
+            .dimension(subtypeDimension)
+            .group(subtypeGroup);
+
+        regimenPie.width(200)
+            .height(200)
+            .transitionDuration(1500)
+            .dimension(regimenDimension)
+            .group(regimenGroup);
+
+        dc.renderAll();
+    });
+    </script>
+</body>

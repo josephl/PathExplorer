@@ -1,0 +1,55 @@
+[
+	{
+	 	"ID" : "GCB",
+		"regimen" : "R-CHOP",
+		"survivalRate" : 45,
+		"cellOrigin" : "Germinal centre B-cell",
+		"oncogenicMechanisms" : {
+			"mechanism" : "BCL2 translocation",
+			"mechanism" : "EZH2 mutations",
+			"mechanism" : "PTEN deletions",
+			"mechanism" : "Loss of PTEN expression"
+		},
+		"potentialTargets" : {
+			"target" : "BCL6",
+			"target" : "EZH2",
+			"target" : "PI3K/Akt"
+		}
+	},
+	{
+		"ID" : "ABC",
+		"regimen" : "R-CHOP",
+		"survivalRate" : 80,
+		"cellOrigin" : "Post‐germinal centre B‐cell",
+		"oncogenicMechanisms" : {
+			"mechanism" : "NF‐κB activation",
+			"mechanism" : "CARD11 mutations",
+			"mechanism" : "MYD88 mutations",
+			"mechanism" : "CD79B mutations",
+			"mechanism" : "A20 deletions"
+		},
+		"potentialTargets" : {
+			"target" : "BCR",
+			"target" : "CBM complex",
+			"target" : "IRAK‐4",
+			"target" : "JAK–STAT"
+		}
+	},
+	{
+		"ID" : "PMBL",
+		"regimen" : "DA-EPOCH-R",
+		"survivalRate" : 97,
+		"cellOrigin" : "Post‐thymic B‐cell",
+		"oncogenicMechanisms" : {
+			"mechanism" : "NF‐κB activation",
+			"mechanism" : "9p24 amplification",
+			"mechanism" : "REL amplification",
+			"mechanism" : "JAK2 mutations",
+			"mechanism" : "CIITA translocations"
+		},
+		"potentialTargets" : {
+			"target" : "PD‐1",
+			"target" : "JAK–STAT"
+		}
+	}
+]
